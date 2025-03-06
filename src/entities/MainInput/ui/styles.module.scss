@@ -1,0 +1,22 @@
+.input {
+  padding: 12px 0 12px 12px;
+  border: 1px solid vars.$alto-50;
+  border-radius: 4px;
+
+  font-size: 14px;
+  font-family: inherit;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: vars.$alto;
+  }
+}
+
+.error {
+  color: #e53935;
+  font-size: 12px;
+  display: inline-block;
+  margin-top: 5px;
+}
