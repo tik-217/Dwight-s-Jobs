@@ -1,6 +1,6 @@
 .input {
-  padding: 12px 0 12px 12px;
-  border: 1px solid vars.$alto-50;
+  padding: 12px 0 14px 14px;
+  border: 1px solid var(--alto-50);
   border-radius: 4px;
 
   font-size: 14px;
@@ -10,7 +10,7 @@
   box-sizing: border-box;
 
   &::placeholder {
-    color: vars.$alto;
+    color: var(--alto);
   }
 }
 

@@ -1,3 +1,5 @@
 export interface MainButtonProps {
-  type: "submit" | "reset" | "button";
+  type: "submit" | "button";
+  fullWidth?: boolean;
+  text: string;
 }

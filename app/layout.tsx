@@ -10,22 +10,22 @@ export const metadata: Metadata = {
 const Merriweather = localFont({
   src: [
     {
-      path: "../src/app/fonts/Merriweather/Merriweather-Light.woff2",
+      path: "../public/fonts/Merriweather/Merriweather-Light.woff2",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../src/app/fonts/Merriweather/Merriweather-Regular.woff2",
+      path: "../public/fonts/Merriweather/Merriweather-Regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../src/app/fonts/Merriweather/Merriweather-Bold.woff2",
+      path: "../public/fonts/Merriweather/Merriweather-Bold.woff2",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../src/app/fonts/Merriweather/Merriweather-Black.woff2",
+      path: "../public/fonts/Merriweather/Merriweather-Black.woff2",
       weight: "600",
       style: "normal",
     },
@@ -41,7 +41,7 @@ export default function RootLayout({
     <html lang="ru" className={Merriweather.className}>
       <body>
         {/*<Providers session={session}>{children}</Providers>*/}
-         {children}
+        {children}
       </body>
     </html>
   );

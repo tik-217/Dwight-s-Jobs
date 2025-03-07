@@ -45,7 +45,7 @@ export const LoginForm = () => {
             {...register("password", { required: true })}
           />
         </div>
-        <MainButton type={"submit"} />
+        <MainButton type={"submit"} fullWidth text={"Войти"} />
       </div>
       <div></div>
       {/*<div>*/}
