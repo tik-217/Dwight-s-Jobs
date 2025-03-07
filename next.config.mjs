@@ -4,7 +4,7 @@ import path from "path";
 const nextJsConfig = {
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) =>
-      rule.test?.test?.(".svg")
+      rule.test?.test?.(".svg"),
     );
 
     config.module.rules.push(
@@ -18,16 +18,12 @@ const nextJsConfig = {
         issuer: fileLoaderRule.issuer,
         resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] },
         use: ["@svgr/webpack"],
-      }
+      },
     );
 
     fileLoaderRule.exclude = /\.svg$/i;
 
     return config;
-  },
-  sassOptions: {
-    includePaths: ["./src/app/styles"],
-    prependData: `@use "vars.module.scss";`,
   },
 };
 
