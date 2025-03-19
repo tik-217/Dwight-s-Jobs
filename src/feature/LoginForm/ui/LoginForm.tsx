@@ -1,11 +1,11 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { MainInput } from "@/entities/MainInput";
-import { MainButton } from "@/entities/MainButton";
+import { MainButton, MainInput, LinkBtn } from "@/shared/ui";
 import { LoginFormData } from "../model/types";
 import { loginFormValid } from "../utils/validation";
 import styles from "./styles.module.scss";
-// import { useSession } from "next-auth/react";
+import { useLogin } from "../api/hooks/useLogin";
+import { setToken } from "@/shared/utils/tokenTools";
 
 export const LoginForm = () => {
   const {
@@ -14,28 +14,31 @@ export const LoginForm = () => {
     formState: { errors },
   } = useForm<LoginFormData>({
     defaultValues: {
-      login: "",
+      email: "",
       password: "",
     },
     resolver: yupResolver(loginFormValid),
   });
 
-  const formSubmit = (data: LoginFormData) => {
-    console.log(data);
+  const { mutate: login } = useLogin();
+
+  const formSubmit = (formData: LoginFormData) => {
+    console.log(formData);
+    login(formData, {
+      onSuccess: ({ access_token }) => {
+        setToken({ accessToken: access_token });
+      },
+    });
   };
-
-  // const { data: session, status } = useSession();
-
-  // console.log(session);
 
   return (
     <form onSubmit={handleSubmit(formSubmit)} className={styles.form}>
-      <div>
+      <div className={styles.form__inputs}>
         <div className={styles.form__element}>
           <MainInput
-            placeholder={"Login"}
-            errors={errors.login?.message}
-            {...register("login", { required: true })}
+            placeholder={"Email"}
+            errors={errors.email?.message}
+            {...register("email", { required: true })}
           />
         </div>
         <div className={styles.form__element}>
@@ -45,13 +48,18 @@ export const LoginForm = () => {
             {...register("password", { required: true })}
           />
         </div>
-        <MainButton type={"submit"} fullWidth text={"Войти"} />
+        <MainButton
+          type={"submit"}
+          fullWidth
+          text={"Войти"}
+          isPending={false}
+        />
       </div>
-      <div></div>
-      {/*<div>*/}
-      {/*  <Link href="/signup">Зарегистрироваться</Link>*/}
-      {/*  <Link href="/">Забыли пароль?</Link>*/}
-      {/*</div>*/}
+      <div className={styles.form__footer}>
+        <LinkBtn href={"/signup"} text={"Зарегистрироваться"} />
+        <LinkBtn href={"/"} text={"Забыли пароль?"} />
+      </div>
+      <button onClick={() => console.log(123)}>1231231</button>
     </form>
   );
 };

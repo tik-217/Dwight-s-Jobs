@@ -1,0 +1,61 @@
+@import "@/app/styles/mixins";
+
+.button {
+  border-radius: var(--borderRadius);
+  background: var(--blueRibbon);
+  padding: 12px 23px;
+  border: none;
+  color: white;
+  font-family: inherit;
+  cursor: pointer;
+  font-size: 16px;
+  transition: var(--transition);
+
+  min-height: 44px;
+  min-width: 80px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include MainButtonBehavior(false);
+
+  &_fullWidth {
+    width: 100%;
+  }
+
+  &__loader {
+    width: 10px;
+    height: fit-content;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    animation: l5 1s infinite linear alternate;
+
+    @keyframes l5 {
+      0% {
+        box-shadow:
+          14px 0 #fff,
+          -14px 0 #fff2;
+        background: #fff;
+      }
+      33% {
+        box-shadow:
+          14px 0 #fff,
+          -14px 0 #fff2;
+        background: #fff2;
+      }
+      66% {
+        box-shadow:
+          14px 0 #fff2,
+          -14px 0 #fff;
+        background: #fff2;
+      }
+      100% {
+        box-shadow:
+          14px 0 #fff2,
+          -14px 0 #fff;
+        background: #fff;
+      }
+    }
+  }
+}
