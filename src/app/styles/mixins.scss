@@ -1,0 +1,17 @@
+@mixin MainButtonBehavior($isLink) {
+  &:hover {
+    @if ($isLink) {
+      color: var(--blueRibbon-hover);
+    } @else {
+      background: var(--blueRibbon-hover);
+    }
+  }
+
+  &:active {
+    @if ($isLink) {
+      color: var(--blueRibbon-active);
+    } @else {
+      background: var(--blueRibbon-active);
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.input {
+  padding: 13px 0 13px 18px;
+  border: 1px solid var(--alto-50);
+  border-radius: var(--borderRadius);
+
+  font-size: 14px;
+  font-family: inherit;
+
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+
+  transition: var(--transition);
+
+  &::placeholder {
+    color: var(--alto);
+    font-size: 14px;
+    font-weight: 200;
+  }
+
+  &:hover {
+    border: 1px solid var(--alto);
+  }
+
+  &:focus {
+    border: 1px solid var(--blueRibbon);
+  }
+}
+
+.error {
+  color: #e53935;
+  font-size: 12px;
+  display: inline-block;
+  margin-top: 5px;
+}

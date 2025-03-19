@@ -1,5 +1,11 @@
 import { LoginForm } from "@/feature/LoginForm";
+import { AuthTitle } from "@/entities/AuthTitle";
 
 export const LoginSection = () => {
-  return <LoginForm />;
+  return (
+    <>
+      <AuthTitle title={"Войти"} />
+      <LoginForm />
+    </>
+  );
 };

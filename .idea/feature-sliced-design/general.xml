@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FeatureSlicedDesignGeneral">
+    <option name="layerCustomNameByType">
+      <map>
+        <entry key="APP" value="app" />
+        <entry key="PAGES" value="pages" />
+        <entry key="SHARED" value="shared" />
+        <entry key="WIDGETS" value="widgets" />
+        <entry key="ENTITIES" value="entities" />
+        <entry key="FEATURES" value="features" />
+        <entry key="PROCESSES" value="" />
+      </map>
+    </option>
+    <option name="sourcesFolder" value="$PROJECT_DIR$/src" />
+  </component>
+</project>

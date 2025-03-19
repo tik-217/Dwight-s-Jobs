@@ -1,9 +1,15 @@
 :root {
-  --alto: #d9d9d9;
-  --alto-50: #d9d9d970;
+  --alto: #a4a4a4;
+  --alto-50: rgba(217, 217, 217, 0.56);
   --blueRibbon: #0059ff;
   --blueRibbon-hover: #0059ffcf;
   --blueRibbon-active: #0059ffb3;
+
+  --borderRadius: 8px;
+  --transitionDuration: 0.1s;
+  --transitionTimingFunction: ease-in-out;
+
+  --transition: all var(--transitionTimingFunction) var(--transitionDuration);
 }
 
 body {
