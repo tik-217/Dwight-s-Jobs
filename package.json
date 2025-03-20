@@ -14,6 +14,7 @@
     "@hookform/resolvers": "^3.9.1",
     "@tanstack/react-query": "^5.67.2",
     "axios": "^1.8.2",
+    "jwt-decode": "^4.0.0",
     "next": "14.2.22",
     "next-auth": "^4.24.11",
     "react": "18",
