@@ -1,13 +1,8 @@
 import Logo from "@/shared/assets/logo.svg";
+import { AuthTitleProps } from "../model/types";
 import styles from "./styles.module.scss";
 
-export const AuthTitle = ({
-  title,
-  subtitle,
-}: {
-  title: string;
-  subtitle?: string | undefined;
-}) => {
+export const AuthTitle = ({ title, subtitle }: AuthTitleProps) => {
   return (
     <section className={styles.authTitle}>
       <div className={styles.authTitle__img}>
