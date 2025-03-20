@@ -4,10 +4,11 @@
   --blueRibbon: #0059ff;
   --blueRibbon-hover: #0059ffcf;
   --blueRibbon-active: #0059ffb3;
+  --error-text: #e53935;
 
   --borderRadius: 8px;
-  --transitionDuration: 0.1s;
-  --transitionTimingFunction: ease-in-out;
+  --transitionDuration: 0.15s;
+  --transitionTimingFunction: ease-in;
 
   --transition: all var(--transitionTimingFunction) var(--transitionDuration);
 }

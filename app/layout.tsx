@@ -4,7 +4,6 @@ import localFont from "next/font/local";
 import { QueryProvider } from "@/shared/providers/QueryProvider";
 import { ProtectProvider } from "@/shared/providers/ProtectProvider";
 import "@/app/styles/globals.scss";
-import { NextAuthProvider } from "@/shared/providers/NextAuthProvider";
 
 export const metadata: Metadata = {
   title: "DJ",
@@ -44,9 +43,9 @@ export default async function RootLayout({
   return (
     <html lang="ru" className={Merriweather.className}>
       <body>
-        <ProtectProvider>
-          <QueryProvider>{children}</QueryProvider>
-        </ProtectProvider>
+        <QueryProvider>
+          <ProtectProvider>{children}</ProtectProvider>
+        </QueryProvider>
       </body>
     </html>
   );
